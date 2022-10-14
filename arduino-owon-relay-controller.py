@@ -15,7 +15,7 @@ DEFAULT_INTERLOOP_DELAY = 60.0 # 1 minute in (s)
 DEFAULT_OWON_CAPTURE_PRETIME = 5.0 # 5 seconds in (s)
 DEFAULT_OWON_CAPTURE_POSTTIME = 5.0 # 5 seconds in (s)
 VERBOSE = True
-bin_out_folder = "/home/johnathanglyon/Desktop/test_bin_out/"
+bin_out_folder = "~/Desktop/owon-out/"
 
 #init
 s = serial.Serial(port=serial_addr, baudrate=9600)
@@ -75,7 +75,7 @@ def clear_relays():
 	
 def owon_dump(channel):
 	filename = bin_out_folder + str(time.time()) + "_" + str(channel) + "_dump.bin"
-	exit_code = os.system("/home/johnathanglyon/Desktop/owon-sds7102-protocol-master/owon-dump > " + filename)
+	exit_code = os.system("~/Desktop/owon-sds7102-protocol-master/owon-dump > " + filename)
 	print("OWONDUMP ran with exit code %d" % exit_code)
 
 def print_loop_settings():
